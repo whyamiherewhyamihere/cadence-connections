@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1600" viewBox="0 0 1800 1600">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2f343b"/>
+    </marker>
+    <style>
+      .bg { fill: #f7f8fa; }
+      .node { fill: #ffffff; stroke: #2f343b; stroke-width: 2; rx: 10; }
+      .node-soft { fill: #fbfcfd; stroke: #2f343b; stroke-width: 2; rx: 10; }
+      .node-final { fill: #f4f5f7; stroke: #2f343b; stroke-width: 2; rx: 10; }
+      .line { fill: none; stroke: #2f343b; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; marker-end: url(#arrow); }
+      .title { font-family: Arial, sans-serif; font-size: 28px; font-weight: 700; fill: #111418; text-anchor: middle; }
+      .text { font-family: Arial, sans-serif; font-size: 20px; font-weight: 600; fill: #15191f; text-anchor: middle; dominant-baseline: middle; }
+      .small { font-family: Arial, sans-serif; font-size: 15px; font-weight: 500; fill: #3e454d; text-anchor: middle; dominant-baseline: middle; }
+      .hint { font-family: Arial, sans-serif; font-size: 14px; font-weight: 500; fill: #6c737c; text-anchor: middle; dominant-baseline: middle; }
+    </style>
+  </defs>
+
+  <rect class="bg" width="1800" height="1600"/>
+  <text class="title" x="900" y="58">User Flow пользователя Cadence Connections</text>
+
+  <rect class="node" x="760" y="110" width="280" height="62"/>
+  <text class="text" x="900" y="141">Главная</text>
+
+  <path class="line" d="M900 172 L900 220"/>
+  <text class="hint" x="1020" y="198">переход в магазин</text>
+  <rect class="node-soft" x="760" y="220" width="280" height="62"/>
+  <text class="text" x="900" y="251">Каталог товаров</text>
+
+  <path class="line" d="M900 282 L900 330"/>
+  <text class="hint" x="1022" y="308">навигация по разделам</text>
+  <rect class="node-soft" x="760" y="330" width="280" height="62"/>
+  <text class="text" x="900" y="361">Выбор категории</text>
+
+  <path class="line" d="M900 392 L900 440"/>
+  <text class="hint" x="1028" y="418">выбор товара</text>
+  <rect class="node-soft" x="760" y="440" width="280" height="62"/>
+  <text class="text" x="900" y="471">Карточка товара</text>
+
+  <path class="line" d="M900 502 L900 550"/>
+  <text class="hint" x="1040" y="528">настройка покупки</text>
+  <rect class="node-soft" x="760" y="550" width="280" height="62"/>
+  <text class="text" x="900" y="581">Выбор опции</text>
+  <text class="small" x="900" y="601">товара</text>
+
+  <path class="line" d="M900 612 L900 660"/>
+  <text class="hint" x="1045" y="638">добавление позиции</text>
+  <rect class="node-soft" x="760" y="660" width="280" height="62"/>
+  <text class="text" x="900" y="691">Добавление</text>
+  <text class="small" x="900" y="711">в корзину</text>
+
+  <path class="line" d="M900 722 L900 770"/>
+  <text class="hint" x="1030" y="748">просмотр состава</text>
+  <rect class="node-soft" x="760" y="770" width="280" height="62"/>
+  <text class="text" x="900" y="801">Корзина</text>
+
+  <path class="line" d="M900 832 L900 880"/>
+  <text class="hint" x="1046" y="858">корректировка заказа</text>
+  <rect class="node-soft" x="760" y="880" width="280" height="70"/>
+  <text class="text" x="900" y="907">Изменение</text>
+  <text class="small" x="900" y="929">количества товара</text>
+
+  <path class="line" d="M900 950 L900 998"/>
+  <text class="hint" x="1042" y="976">переход к форме</text>
+  <rect class="node-soft" x="760" y="998" width="280" height="62"/>
+  <text class="text" x="900" y="1029">Переход</text>
+  <text class="small" x="900" y="1049">к оформлению</text>
+
+  <path class="line" d="M900 1060 L900 1108"/>
+  <text class="hint" x="1045" y="1086">ввод контактов</text>
+  <rect class="node-soft" x="760" y="1108" width="280" height="86"/>
+  <text class="text" x="900" y="1131">Заполнение данных</text>
+  <text class="small" x="900" y="1153">имя • фамилия</text>
+  <text class="small" x="900" y="1173">номер телефона</text>
+
+  <path class="line" d="M900 1194 L900 1242"/>
+  <text class="hint" x="1038" y="1220">отправка формы</text>
+  <rect class="node-soft" x="760" y="1242" width="280" height="62"/>
+  <text class="text" x="900" y="1273">Подтверждение</text>
+  <text class="small" x="900" y="1293">заказа</text>
+
+  <path class="line" d="M900 1304 L900 1352"/>
+  <text class="hint" x="1036" y="1330">результат</text>
+  <rect class="node-final" x="705" y="1352" width="390" height="72"/>
+  <text class="text" x="900" y="1379">Заказ успешно оформлен</text>
+  <text class="small" x="900" y="1401">сообщение пользователю</text>
+</svg>

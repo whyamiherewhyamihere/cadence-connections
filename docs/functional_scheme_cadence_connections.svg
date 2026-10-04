@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1700" viewBox="0 0 1800 1700">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2f343b"/>
+    </marker>
+    <style>
+      .bg { fill: #f7f8fa; }
+      .lane { fill: #ffffff; stroke: #d8dde3; stroke-width: 2; rx: 18; }
+      .lane-db { fill: #f4f5f7; stroke: #d8dde3; stroke-width: 2; rx: 18; }
+      .node { fill: #ffffff; stroke: #2f343b; stroke-width: 2; rx: 10; }
+      .node-soft { fill: #fbfcfd; stroke: #2f343b; stroke-width: 2; rx: 10; }
+      .node-db { fill: #f4f5f7; stroke: #2f343b; stroke-width: 2; rx: 10; }
+      .line { fill: none; stroke: #2f343b; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; marker-end: url(#arrow); }
+      .line-soft { fill: none; stroke: #6c737c; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; marker-end: url(#arrow); }
+      .title { font-family: Arial, sans-serif; font-size: 28px; font-weight: 700; fill: #111418; text-anchor: middle; }
+      .lane-title { font-family: Arial, sans-serif; font-size: 18px; font-weight: 700; fill: #4b535c; text-anchor: middle; }
+      .text { font-family: Arial, sans-serif; font-size: 19px; font-weight: 600; fill: #15191f; text-anchor: middle; dominant-baseline: middle; }
+      .small { font-family: Arial, sans-serif; font-size: 15px; font-weight: 500; fill: #3e454d; text-anchor: middle; dominant-baseline: middle; }
+    </style>
+  </defs>
+
+  <rect class="bg" width="1800" height="1700"/>
+  <text class="title" x="900" y="58">Функциональная схема веб-сайта Cadence Connections</text>
+
+  <rect class="lane" x="170" y="95" width="620" height="1330"/>
+  <text class="lane-title" x="480" y="132">Frontend / интерфейс сайта</text>
+
+  <rect class="lane" x="1010" y="95" width="390" height="1330"/>
+  <text class="lane-title" x="1205" y="132">Backend / обработка заказа</text>
+
+  <rect class="lane-db" x="1450" y="95" width="220" height="1330"/>
+  <text class="lane-title" x="1560" y="132">PostgreSQL</text>
+
+  <!-- Frontend flow -->
+  <rect class="node" x="340" y="170" width="280" height="62"/>
+  <text class="text" x="480" y="201">Пользователь</text>
+
+  <path class="line" d="M480 232 L480 282"/>
+  <rect class="node-soft" x="340" y="282" width="280" height="62"/>
+  <text class="text" x="480" y="313">Просмотр главной</text>
+  <text class="small" x="480" y="333">страницы</text>
+
+  <path class="line" d="M480 344 L480 394"/>
+  <rect class="node-soft" x="340" y="394" width="280" height="62"/>
+  <text class="text" x="480" y="425">Переход в каталог</text>
+  <text class="small" x="480" y="445">товаров</text>
+
+  <path class="line" d="M480 456 L480 506"/>
+  <rect class="node-soft" x="340" y="506" width="280" height="62"/>
+  <text class="text" x="480" y="537">Просмотр категорий</text>
+  <text class="small" x="480" y="557">товаров</text>
+
+  <path class="line" d="M480 568 L480 618"/>
+  <rect class="node-soft" x="340" y="618" width="280" height="62"/>
+  <text class="text" x="480" y="649">Переход в карточку</text>
+  <text class="small" x="480" y="669">товара</text>
+
+  <path class="line" d="M480 680 L480 730"/>
+  <rect class="node-soft" x="340" y="730" width="280" height="70"/>
+  <text class="text" x="480" y="757">Выбор опции товара</text>
+  <text class="small" x="480" y="779">и количества</text>
+
+  <path class="line" d="M480 800 L480 850"/>
+  <rect class="node-soft" x="340" y="850" width="280" height="62"/>
+  <text class="text" x="480" y="881">Добавление товара</text>
+  <text class="small" x="480" y="901">в корзину</text>
+
+  <path class="line" d="M480 912 L480 962"/>
+  <rect class="node-soft" x="340" y="962" width="280" height="62"/>
+  <text class="text" x="480" y="993">Просмотр корзины</text>
+
+  <path class="line" d="M480 1024 L480 1074"/>
+  <rect class="node-soft" x="340" y="1074" width="280" height="62"/>
+  <text class="text" x="480" y="1105">Оформление заказа</text>
+
+  <path class="line" d="M480 1136 L480 1186"/>
+  <rect class="node-soft" x="340" y="1186" width="280" height="70"/>
+  <text class="text" x="480" y="1213">Ввод данных</text>
+  <text class="small" x="480" y="1235">клиента</text>
+
+  <!-- To backend -->
+  <path class="line" d="M620 1221 L1035 1221"/>
+  <rect class="node" x="1035" y="1186" width="340" height="70"/>
+  <text class="text" x="1205" y="1213">Передача данных</text>
+  <text class="small" x="1205" y="1235">в backend</text>
+
+  <path class="line" d="M1205 1256 L1205 1306"/>
+  <rect class="node" x="1035" y="1306" width="340" height="70"/>
+  <text class="text" x="1205" y="1333">Формирование заказа</text>
+  <text class="small" x="1205" y="1355">и транзакция</text>
+
+  <!-- Backend to DB -->
+  <path class="line" d="M1375 1341 L1468 1341"/>
+  <rect class="node-db" x="1468" y="1238" width="184" height="62"/>
+  <text class="text" x="1560" y="1269">customers</text>
+
+  <rect class="node-db" x="1468" y="1320" width="184" height="62"/>
+  <text class="text" x="1560" y="1351">orders</text>
+
+  <rect class="node-db" x="1468" y="1402" width="184" height="62"/>
+  <text class="text" x="1560" y="1433">order_items</text>
+
+  <path class="line-soft" d="M1560 1300 L1560 1320"/>
+  <path class="line-soft" d="M1560 1382 L1560 1402"/>
+
+  <path class="line" d="M1205 1376 L1205 1480"/>
+  <rect class="node" x="1035" y="1480" width="340" height="70"/>
+  <text class="text" x="1205" y="1507">Успешное оформление</text>
+  <text class="small" x="1205" y="1529">заказа</text>
+
+  <path class="line" d="M1035 1515 L620 1515 L620 1305 L480 1305"/>
+  <rect class="node-soft" x="340" y="1274" width="280" height="62"/>
+  <text class="text" x="480" y="1305">Сообщение</text>
+  <text class="small" x="480" y="1325">пользователю</text>
+</svg>

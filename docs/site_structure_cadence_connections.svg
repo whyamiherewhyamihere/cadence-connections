@@ -1,0 +1,125 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1120" viewBox="0 0 1800 1120">
+  <defs>
+    <style>
+      .bg { fill: #f7f8fa; }
+      .node { fill: #ffffff; stroke: #2f343b; stroke-width: 2; rx: 10; }
+      .node-soft { fill: #fbfcfd; stroke: #2f343b; stroke-width: 2; rx: 10; }
+      .node-service { fill: #f4f5f7; stroke: #2f343b; stroke-width: 2; stroke-dasharray: 8 6; rx: 10; }
+      .title { font-family: Arial, sans-serif; font-size: 24px; font-weight: 700; fill: #111418; text-anchor: middle; dominant-baseline: middle; }
+      .text { font-family: Arial, sans-serif; font-size: 20px; font-weight: 600; fill: #15191f; text-anchor: middle; dominant-baseline: middle; }
+      .small { font-family: Arial, sans-serif; font-size: 15px; font-weight: 500; fill: #3e454d; text-anchor: middle; dominant-baseline: middle; }
+      .caption { font-family: Arial, sans-serif; font-size: 18px; font-weight: 600; fill: #4b535c; text-anchor: middle; }
+      .line { fill: none; stroke: #2f343b; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+      .line-service { fill: none; stroke: #2f343b; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 8 6; }
+    </style>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="1800" height="1120"/>
+  <text class="title" x="900" y="58">Структурная схема сайта Cadence Connections</text>
+  <text class="caption" x="630" y="104">Пользовательская часть</text>
+  <text class="caption" x="1400" y="104">Служебная часть</text>
+
+  <!-- Root -->
+  <rect class="node" x="790" y="130" width="220" height="58"/>
+  <text class="text" x="900" y="159">Главная</text>
+
+  <!-- Level 1 connectors -->
+  <path class="line" d="M900 188 L900 232 L360 232 L360 260"/>
+  <path class="line" d="M900 232 L760 232 L760 260"/>
+  <path class="line" d="M900 232 L1160 232 L1160 260"/>
+  <path class="line-service" d="M900 232 L1460 232 L1460 260"/>
+
+  <!-- Level 1 -->
+  <rect class="node" x="250" y="260" width="220" height="58"/>
+  <text class="text" x="360" y="289">Магазин</text>
+
+  <rect class="node" x="650" y="260" width="220" height="58"/>
+  <text class="text" x="760" y="289">Новости</text>
+
+  <rect class="node" x="1050" y="260" width="220" height="58"/>
+  <text class="text" x="1160" y="289">Информация</text>
+
+  <rect class="node-service" x="1350" y="260" width="220" height="58"/>
+  <text class="text" x="1460" y="289">Служебные</text>
+  <text class="small" x="1460" y="310">страницы</text>
+
+  <!-- Shop connectors -->
+  <path class="line" d="M360 318 L360 366 L180 366 L180 394"/>
+  <path class="line" d="M360 366 L420 366 L420 394"/>
+  <path class="line" d="M360 366 L660 366 L660 394"/>
+  <path class="line" d="M360 366 L900 366 L900 394"/>
+
+  <!-- Shop pages -->
+  <rect class="node-soft" x="70" y="394" width="220" height="58"/>
+  <text class="text" x="180" y="423">Категории</text>
+  <text class="small" x="180" y="444">товаров</text>
+
+  <rect class="node-soft" x="310" y="394" width="220" height="58"/>
+  <text class="text" x="420" y="423">Карточка</text>
+  <text class="small" x="420" y="444">товара</text>
+
+  <rect class="node-soft" x="550" y="394" width="220" height="58"/>
+  <text class="text" x="660" y="423">Корзина</text>
+
+  <rect class="node-soft" x="790" y="394" width="220" height="58"/>
+  <text class="text" x="900" y="423">Оформление</text>
+  <text class="small" x="900" y="444">заказа</text>
+
+  <!-- Category connectors -->
+  <path class="line" d="M180 452 L180 500"/>
+  <path class="line" d="M180 500 L180 516"/>
+  <path class="line" d="M180 500 L180 592"/>
+  <path class="line" d="M180 500 L180 668"/>
+  <path class="line" d="M180 500 L180 744"/>
+  <path class="line" d="M180 500 L180 820"/>
+
+  <rect class="node-soft" x="70" y="516" width="220" height="58"/>
+  <text class="text" x="180" y="545">Фреймсеты</text>
+
+  <rect class="node-soft" x="70" y="592" width="220" height="58"/>
+  <text class="text" x="180" y="621">Компоненты</text>
+
+  <rect class="node-soft" x="70" y="668" width="220" height="58"/>
+  <text class="text" x="180" y="697">Колеса</text>
+
+  <rect class="node-soft" x="70" y="744" width="220" height="58"/>
+  <text class="text" x="180" y="773">Аксессуары</text>
+
+  <rect class="node-soft" x="70" y="820" width="220" height="58"/>
+  <text class="text" x="180" y="849">Одежда</text>
+
+  <!-- News connectors -->
+  <path class="line" d="M760 318 L760 520"/>
+  <path class="line" d="M760 520 L760 548"/>
+  <path class="line" d="M760 520 L760 624"/>
+
+  <rect class="node-soft" x="650" y="548" width="220" height="58"/>
+  <text class="text" x="760" y="577">Список</text>
+  <text class="small" x="760" y="598">новостей</text>
+
+  <rect class="node-soft" x="650" y="624" width="220" height="58"/>
+  <text class="text" x="760" y="653">Страница</text>
+  <text class="small" x="760" y="674">новости</text>
+
+  <!-- Info connectors -->
+  <path class="line" d="M1160 318 L1160 520"/>
+  <path class="line" d="M1160 520 L1160 548"/>
+  <path class="line" d="M1160 520 L1160 624"/>
+  <path class="line" d="M1160 520 L1160 700"/>
+
+  <rect class="node-soft" x="1050" y="548" width="220" height="58"/>
+  <text class="text" x="1160" y="577">О нас</text>
+
+  <rect class="node-soft" x="1050" y="624" width="220" height="58"/>
+  <text class="text" x="1160" y="653">Контакты</text>
+
+  <rect class="node-soft" x="1050" y="700" width="220" height="58"/>
+  <text class="text" x="1160" y="729">FAQ</text>
+
+  <!-- Service connectors -->
+  <path class="line-service" d="M1460 318 L1460 548"/>
+
+  <rect class="node-service" x="1350" y="548" width="220" height="58"/>
+  <text class="text" x="1460" y="573">Просмотр заказов</text>
+  <text class="small" x="1460" y="594">orders_final.php</text>
+</svg>
