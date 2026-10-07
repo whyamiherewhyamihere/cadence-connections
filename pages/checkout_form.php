@@ -3,6 +3,8 @@
 // Открываем PHP-сессию: в ней хранятся корзина и токены оформления.
 session_start();
 
+require_once __DIR__ . '/../lib/validation.php';
+
 // Подключаем каталог товаров и функцию поиска товара по slug.
 require_once __DIR__ . '/../data/products.php';
 
@@ -29,9 +31,7 @@ foreach ($cartItems as $item) {
     // Находим товар в серверном каталоге по его идентификатору slug.
     $product = cadenceProductBySlug($item['slug'] ?? '');
 
-    // Проверяем, что количество является целым числом.
-    // При некорректном значении filter_var() вернет false.
-    $qty = filter_var($item['quantity'] ?? null, FILTER_VALIDATE_INT);
+    $qty = cadenceValidateInt($item['quantity'] ?? null);
 
     // Товар должен существовать, а количество — находиться от 1 до 99.
     if (!$product || $qty === false || $qty < 1 || $qty > 99) {
@@ -127,6 +127,8 @@ require_once __DIR__ . '/../components/header.php';
                         name="last_name"
                         placeholder="Фамилия"
                         autocomplete="family-name"
+                        maxlength="100"
+                        oninput="this.value = this.value.replace(/[^A-Za-zА-Яа-яЁё]/g, '')"
                         required
                     >
                 </label>
@@ -140,22 +142,41 @@ require_once __DIR__ . '/../components/header.php';
                         name="first_name"
                         placeholder="Имя"
                         autocomplete="given-name"
+                        maxlength="100"
+                        oninput="this.value = this.value.replace(/[^A-Za-zА-Яа-яЁё]/g, '')"
                         required
                     >
                 </label>
 
-                <!-- Телефон отправляется под именем phone_number. -->
-                <!-- type="tel" не проверяет формат номера; placeholder показывает пример. -->
-                <label class="checkout-field">
+                
+               <label class="checkout-field">
                     <span>Телефон</span>
+
                     <input
                         type="tel"
                         name="phone_number"
-                        placeholder="+7 (___) ___-__-__"
+                        placeholder="+79991234567"
                         autocomplete="tel"
+                        maxlength="12"
+                        pattern="(?:\+7|7|8)[0-9]{10}"
+                        oninput="
+                            this.value = this.value.replace(/[^0-9+]/g, '');
+                            this.setCustomValidity('');
+                        "
+                        oninvalid="
+                            this.setCustomValidity(
+                                this.validity.valueMissing
+                                    ? 'Введите номер телефона.'
+                                    : 'Неправильный номер. Начните с +7, 7 или 8 и укажите ещё 10 цифр.'
+                            );
+                        "
                         required
                     >
-                </label>
+
+    <small class="phone-hint" style="color: #777; font-size: 12px;">
+    Например: +79991234567, 79991234567 или 89991234567
+</small>
+</label>
             </div>
 
             <!-- Правая часть формы: рассчитанная стоимость и кнопка отправки. -->

@@ -3,8 +3,10 @@
 // Открываем PHP-сессию для доступа к корзине и токенам оформления.
 session_start();
 
-// Подключаем загрузчик Composer, чтобы использовать библиотеку Stripe.
-require_once __DIR__ . '/../vendor/autoload.php';
+require_once __DIR__ . '/../lib/validation.php';
+
+require_once __DIR__ . '/../lib/stripe_http.php';
+
 
 // Подключаем каталог и функцию поиска товара по slug.
 require_once __DIR__ . '/../data/products.php';
@@ -70,6 +72,16 @@ try {
         $buyer[$field] = trim($value);
     }
 
+    if (!is_valid_russian_phone_number($buyer['phone_number'])) {
+    throw new InvalidArgumentException(
+        'Введите телефон в формате +7 999 123-45-67.'
+    );
+}
+
+// Сохраняем все принятые номера в формате +79991234567.
+$phone = preg_replace('/[ ()-]/', '', $buyer['phone_number']);
+$buyer['phone_number'] = '+7' . substr($phone, -10);
+
     // Берем корзину из серверной сессии, а не из отправленной формы.
     $cart = $_SESSION['cart'] ?? [];
 
@@ -109,20 +121,13 @@ try {
         // Получаем актуальные данные товара из серверного каталога.
         $product = cadenceProductBySlug($item['slug']);
 
-        // Проверяем количество как целое число.
-        // При неудачной проверке получим false.
-        $qty = filter_var(
-            $item['quantity'] ?? null,
-            FILTER_VALIDATE_INT
-        );
+
+        $qty = cadenceValidateInt($item['quantity'] ?? null);
 
         // Убираем пробелы по краям варианта товара.
         $option = trim($item['product_option']);
-
-        // Проверяем цену из каталога как целое число рублей.
-        // Если товар не найден, сразу используем false.
-        $price = $product
-            ? filter_var($product['price'], FILTER_VALIDATE_INT)
+            $price = $product
+                ? cadenceValidateInt($product['price'])
             : false;
 
         // Проверяем ограничения текущей реализации магазина.

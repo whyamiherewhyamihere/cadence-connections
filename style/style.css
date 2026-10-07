@@ -2743,3 +2743,214 @@ main > * {
         grid-template-columns: repeat(2, 1fr);
     }
 }
+.payment-result-main {
+    min-height: calc(100svh - 66px);
+    padding: 70px 20px 90px;
+    display: grid;
+    place-items: center;
+    background: #fff;
+}
+
+.payment-result-main .payment-result {
+    width: min(600px, 100%);
+    margin: 0 auto;
+    text-align: center;
+    font-family: 'Montserrat', Arial, sans-serif;
+    color: #111;
+}
+
+.payment-result-kicker {
+    margin: 0 0 32px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    color: #676767;
+}
+
+.payment-result-icon {
+    display: grid;
+    place-items: center;
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 24px;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    background: #f7f7f7;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.payment-result-icon.is-paid {
+    border-color: #bce9fa;
+    background: #eaf8fe;
+    color: #137da8;
+}
+
+.payment-result-icon svg {
+    width: 36px;
+    height: 36px;
+}
+
+.payment-result-title {
+    margin: 0;
+    font-family: 'Inter', 'Montserrat', Arial, sans-serif;
+    font-size: clamp(26px, 4vw, 38px);
+    font-weight: 600;
+    line-height: 1.15;
+    letter-spacing: -0.7px;
+    text-transform: uppercase;
+    overflow-wrap: break-word;
+}
+
+.payment-result-description {
+    max-width: 470px;
+    margin: 18px auto 0;
+    font-size: 15px;
+    line-height: 1.7;
+    color: #555;
+}
+
+.payment-result-details {
+    margin: 30px 0 0;
+    padding: 8px 24px;
+    border: 1px solid #e5e5e5;
+    background: #fafafa;
+    text-align: left;
+}
+
+.payment-result-details>div {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 15px 0;
+    font-size: 14px;
+}
+
+.payment-result-details dt {
+    color: #666;
+}
+
+.payment-result-details dd {
+    margin: 0;
+    font-weight: 600;
+    text-align: right;
+}
+
+.payment-result-details .payment-result-total {
+    border-top: 1px solid #e2e2e2;
+}
+
+.payment-result-total dt,
+.payment-result-total dd {
+    color: #111;
+    font-weight: 600;
+}
+
+.payment-result-total dd {
+    font-size: 18px;
+}
+
+.payment-result-actions {
+    display: grid;
+    gap: 10px;
+    margin-top: 24px;
+}
+
+.payment-result-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    min-height: 56px;
+    padding: 16px 20px;
+    border: 1px solid #111;
+    background: #111;
+    color: #fff;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.4;
+    letter-spacing: 0.6px;
+    transition: background-color 0.15s, border-color 0.15s;
+}
+
+.payment-result-button:hover {
+    background: #303030;
+    border-color: #303030;
+}
+
+.payment-result-button span {
+    font-size: 21px;
+    line-height: 1;
+}
+
+.payment-result-button.is-secondary {
+    background: #fff;
+    color: #111;
+    border-color: #ddd;
+}
+
+.payment-result-button.is-secondary:hover {
+    background: #f5f5f5;
+    border-color: #111;
+}
+
+.payment-result-button:focus-visible {
+    outline: 3px solid #2eaadc;
+    outline-offset: 4px;
+}
+
+.payment-result-note {
+    margin: 18px 0 0;
+    font-size: 11px;
+    line-height: 1.6;
+    color: #707070;
+}
+
+@media (max-width: 600px) {
+    .payment-result-main {
+        padding: 40px 16px 55px;
+        min-height: calc(100svh - 66px);
+    }
+
+    .payment-result-kicker {
+        font-size: 10px;
+        letter-spacing: 0.6px;
+        margin-bottom: 26px;
+    }
+
+    .payment-result-icon {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 20px;
+    }
+
+    .payment-result-description {
+        font-size: 14px;
+    }
+
+    .payment-result-details {
+        padding: 8px 16px;
+        margin-top: 24px;
+    }
+
+    .payment-result-details>div {
+        font-size: 13px;
+        gap: 12px;
+    }
+
+    .payment-result-button {
+        padding: 16px 12px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .payment-result-button {
+        transition: none;
+    }
+}
+
+.phone-hint {
+    color: #b6b4b4;
+    font-size: 12px;
+}
